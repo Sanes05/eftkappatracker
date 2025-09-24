@@ -10,6 +10,7 @@ let fenceQuestList = [];
 let lightkeeperQuestList = [];
 let btrDriverQuestList = [];
 let refQuestList = [];
+let funcList = ["renderPraporQuests()"];
 
 async function init() {
 	await getTraderInfos();
@@ -24,6 +25,17 @@ function renderNavBar() {
 	for (let tradersIndex = 0; tradersIndex < tradersList.length; tradersIndex++) {
 		const traderName = tradersList[tradersIndex].name;
 		const traderImg = tradersList[tradersIndex].image;
-		navbarContent.innerHTML += navBarTempalte(traderName, traderImg);
+		const func = funcList[tradersIndex];
+		navbarContent.innerHTML += navBarTempalte(traderName, traderImg, func);
+	}
+}
+
+function renderPraporQuests() {
+	let content = document.getElementById("content");
+	content.innerHTML = "";
+	for (let i = 0; i < praporQuestList.length; i++) {
+		const questName = praporQuestList[i].name;
+		const kappareq = praporQuestList[i].kappaRequired;
+		content.innerHTML += questTemplate(questName, kappareq);
 	}
 }
