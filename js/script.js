@@ -1,9 +1,21 @@
 let tradersList = [];
+let praporQuestList = [];
+let therapistQuestList = [];
+let skierQuestList = [];
+let mechanicQuestList = [];
+let ragmanQuestList = [];
+let jaegerQuestList = [];
+let peacekeeperQuestList = [];
+let fenceQuestList = [];
+let lightkeeperQuestList = [];
+let btrDriverQuestList = [];
+let refQuestList = [];
 
 async function init() {
 	await getTraderInfos();
-	getQuestInofs();
+	await getQuestInfos();
 	renderNavBar();
+	console.log();
 }
 
 function renderNavBar() {
