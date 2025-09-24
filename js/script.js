@@ -2,6 +2,7 @@ let tradersList = [];
 
 async function init() {
 	await getTraderInfos();
+	getQuestInofs();
 	renderNavBar();
 }
 
