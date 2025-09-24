@@ -1,7 +1,7 @@
 const navBarTempalte = (name, img, func) => {
 	return `
 <div class="navbar-btn-container">
-	<button onclick="${func}" class="navbar-btn">
+	<button onclick="renderQuests(${func})" class="navbar-btn">
 		<img class="navbar-btn-img" src="${img}" alt="${name}" />
 		<span class="navbar-btn-text">${name}</span>
 	</button>

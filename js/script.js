@@ -10,7 +10,19 @@ let fenceQuestList = [];
 let lightkeeperQuestList = [];
 let btrDriverQuestList = [];
 let refQuestList = [];
-let funcList = ["renderPraporQuests()"];
+let funcList = [
+	"praporQuestList",
+	"therapistQuestList",
+	"fenceQuestList",
+	"skierQuestList",
+	"peacekeeperQuestList",
+	"mechanicQuestList",
+	"ragmanQuestList",
+	"jaegerQuestList",
+	"lightkeeperQuestList",
+	"btrDriverQuestList",
+	"refQuestList"
+];
 
 async function init() {
 	await getTraderInfos();
@@ -30,12 +42,12 @@ function renderNavBar() {
 	}
 }
 
-function renderPraporQuests() {
+function renderQuests(questList) {
 	let content = document.getElementById("content");
 	content.innerHTML = "";
-	for (let i = 0; i < praporQuestList.length; i++) {
-		const questName = praporQuestList[i].name;
-		const kappareq = praporQuestList[i].kappaRequired;
+	for (let i = 0; i < questList.length; i++) {
+		const questName = questList[i].name;
+		const kappareq = questList[i].kappaRequired;
 		content.innerHTML += questTemplate(questName, kappareq);
 	}
 }
