@@ -1,7 +1,7 @@
-const navBarTempalte = (name, img, func) => {
+const navBarTempalte = (name, img, traderQuestList) => {
 	return `
 <div class="navbar-btn-container">
-	<button onclick="renderQuests(${func})" class="navbar-btn">
+	<button onclick="renderQuests(${traderQuestList})" class="navbar-btn">
 		<img class="navbar-btn-img" src="${img}" alt="${name}" />
 		<span class="navbar-btn-text">${name}</span>
 	</button>
@@ -9,11 +9,18 @@ const navBarTempalte = (name, img, func) => {
     `;
 };
 
-const questTemplate = (name, kappareq) => {
+const questTemplate = (name, kappareq, index) => {
 	return `
-    <div class="quest-container">
-	    <h1 class="quest-headline">${name}</h1>
-	    <span class="kappa-req">Notwendig Für Kappa: ${kappareq}</span>
-    </div>
+    <div class="quest-container" id="${index}">
+		<div class="questheadline-container">
+	    	<h3 class="quest-headline">${name}</h3>
+		</div>
+		<div class="quest-kappa-req-container">
+	    	<span class="kappa-req">Notwendig Für Kappa: ${kappareq}</span>
+		</div>
+		<div class="quest-btn-container">
+			<button class="quest-complete-btn" onclick="completeQuest(${index})">Fertig</button>
+		</div>
+		</div>
     `;
 };

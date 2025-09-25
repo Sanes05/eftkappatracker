@@ -7,30 +7,55 @@ body {
 	font-family: "Roboto", sans-serif;
 }
 
-nav {
-	display: flex;
-	justify-content: center;
+.quest-complete {
+	background-color: rgb(0, 226, 0);
 }
 
-.navbar-btn-container {
-	margin: 8px;
-}
-
-.navbar-btn {
-	border: 0px;
-	background-color: inherit;
+#content {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	padding: 8px 8px 8px 8px;
+}
+
+.quest-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-left: 160px;
+	margin-right: 160px;
+	width: 1080px;
+	border: 1px solid black;
+	padding: 8px;
+}
+
+.questheadline-container {
+	border-right: 1px solid black;
+	width: 500px;
+}
+.quest-kappa-req-container {
+	width: 330px;
+	border-right: 1px solid black;
+}
+
+.kappa-req {
+	margin-left: 16px;
+}
+
+.quest-btn-container {
+	width: 250px;
+	display: flex;
+	justify-content: center;
+}
+
+.quest-complete-btn {
+	width: 150px;
 	cursor: pointer;
+	padding: 8px;
+	background-color: inherit;
+	border: 0px;
 }
 
-.navbar-btn:hover {
+.quest-complete-btn:hover {
 	background-color: rgba(0, 0, 0, 0.05);
-}
-
-.navbar-btn-text {
-	margin-top: 16px;
 }

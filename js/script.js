@@ -10,7 +10,7 @@ let fenceQuestList = [];
 let lightkeeperQuestList = [];
 let btrDriverQuestList = [];
 let refQuestList = [];
-let funcList = [
+let questRenderList = [
 	"praporQuestList",
 	"therapistQuestList",
 	"fenceQuestList",
@@ -37,8 +37,8 @@ function renderNavBar() {
 	for (let tradersIndex = 0; tradersIndex < tradersList.length; tradersIndex++) {
 		const traderName = tradersList[tradersIndex].name;
 		const traderImg = tradersList[tradersIndex].image;
-		const func = funcList[tradersIndex];
-		navbarContent.innerHTML += navBarTempalte(traderName, traderImg, func);
+		const traderQuestList = questRenderList[tradersIndex];
+		navbarContent.innerHTML += navBarTempalte(traderName, traderImg, traderQuestList);
 	}
 }
 
@@ -48,6 +48,11 @@ function renderQuests(questList) {
 	for (let i = 0; i < questList.length; i++) {
 		const questName = questList[i].name;
 		const kappareq = questList[i].kappaRequired;
-		content.innerHTML += questTemplate(questName, kappareq);
+		content.innerHTML += questTemplate(questName, kappareq, i);
 	}
+}
+
+function completeQuest(index) {
+	let completeteQuest = document.getElementById(index);
+	completeteQuest.classList.add("quest-complete");
 }
