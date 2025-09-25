@@ -1,29 +1,4 @@
-let tradersList = [];
-let praporQuestList = [];
-let therapistQuestList = [];
-let skierQuestList = [];
-let mechanicQuestList = [];
-let ragmanQuestList = [];
-let jaegerQuestList = [];
-let peacekeeperQuestList = [];
-let fenceQuestList = [];
-let lightkeeperQuestList = [];
-let btrDriverQuestList = [];
-let refQuestList = [];
-let questRenderList = [
-	"praporQuestList",
-	"therapistQuestList",
-	"fenceQuestList",
-	"skierQuestList",
-	"peacekeeperQuestList",
-	"mechanicQuestList",
-	"ragmanQuestList",
-	"jaegerQuestList",
-	"lightkeeperQuestList",
-	"btrDriverQuestList",
-	"refQuestList"
-];
-
+//all arrays are in the lists.js file
 async function init() {
 	await getTraderInfos();
 	await getQuestInfos();
@@ -42,17 +17,18 @@ function renderNavBar() {
 	}
 }
 
-function renderQuests(questList) {
+function renderQuests(questList, name) {
 	let content = document.getElementById("content");
 	content.innerHTML = "";
 	for (let i = 0; i < questList.length; i++) {
 		const questName = questList[i].name;
 		const kappareq = questList[i].kappaRequired;
-		content.innerHTML += questTemplate(questName, kappareq, i);
+		content.innerHTML += questTemplate(questName, kappareq, i, name);
 	}
 }
 
-function completeQuest(index) {
+function completeQuest(index, traderName) {
 	let completeteQuest = document.getElementById(index);
 	completeteQuest.classList.add("quest-complete");
+	setToLocalstorage(traderName);
 }
