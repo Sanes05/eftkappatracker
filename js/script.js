@@ -30,5 +30,35 @@ function renderQuests(questList, name) {
 function completeQuest(index, traderName) {
 	let completeteQuest = document.getElementById(index);
 	completeteQuest.classList.add("quest-complete");
-	setToLocalstorage(traderName);
+	if (traderName === "Prapor") {
+		praporCompleteQuestsList.push(index);
+	}
+	if (traderName === "Therapist") {
+		therapistCompleteQuestsList.push(index);
+	}
+	if (traderName === "Fence") {
+		fenceCompleteQuestsList.push(index);
+	}
+	if (traderName === "Skier") {
+		skierCompleteQuestsList.push(index);
+	}
+	if (traderName === "Peacekeeper") {
+		peacekeeperCompleteQuestsList.push(index);
+	}
+	if (traderName === "Mechanic") {
+		mechanicCompleteQuestsList.push(index);
+	}
+	if (traderName === "Ragman") {
+		ragmanCompleteQuestsList.push(index);
+	}
+	if (traderName === "Jaeger") {
+		jaegerCompleteQuestsList.push(index);
+	}
+	if (traderName === "Lightkeeper") {
+		lightkeeperCompleteQuestsList.push(index);
+	}
+	if (traderName === "BTR Driver") {
+		btrDriverCompleteQuestsList.push(index);
+	}
+	//setToLocalstorage(traderName);
 }
