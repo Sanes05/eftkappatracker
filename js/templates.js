@@ -1,7 +1,7 @@
 const navBarTempalte = (name, img, traderQuestList) => {
 	return `
 <div class="navbar-btn-container">
-	<button onclick="renderQuests(${traderQuestList} , '${name}')" class="navbar-btn">
+	<button onclick="renderQuests(${traderQuestList} , '${name}')" id="${name}" class="navbar-btn">
 		<img class="navbar-btn-img" src="${img}" alt="${name}" />
 		<span class="navbar-btn-text">${name}</span>
 	</button>

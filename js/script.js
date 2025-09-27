@@ -3,7 +3,6 @@ async function init() {
 	await getTraderInfos();
 	await getQuestInfos();
 	renderNavBar();
-	console.log();
 }
 
 function renderNavBar() {
@@ -26,6 +25,7 @@ function renderQuests(questList, name) {
 		content.innerHTML += questTemplate(questName, kappareq, i, name);
 	}
 	getItemsFromLocalstorage(name);
+	toggleNavbarClass(name);
 }
 
 function completeQuest(index, traderName) {
@@ -45,4 +45,20 @@ function addClass(indexArr) {
 		const item = document.getElementById(indexArr[i]);
 		item.classList.add("quest-complete");
 	}
+}
+
+function toggleNavbarClass(id) {
+	// Zuerst die Klasse von allen Buttons entfernen
+	const allButtons = document.querySelectorAll(".navbar-btn");
+	allButtons.forEach((button) => {
+		button.classList.remove("navbar-btn-clicked");
+	});
+
+	// Dann dem ausgewählten Button die Klasse hinzufügen
+	let navbarItem = document.getElementById(id);
+	if (!navbarItem) {
+		console.error("Keine ID");
+		return;
+	}
+	navbarItem.classList.add("navbar-btn-clicked");
 }
