@@ -39,3 +39,10 @@ function completeQuest(index, traderName) {
 	}
 	setToLocalstorage(traderName, list);
 }
+
+function addClass(indexArr) {
+	for (let i = 0; i < indexArr.length; i++) {
+		const item = document.getElementById(indexArr[i]);
+		item.classList.add("quest-complete");
+	}
+}

@@ -5,9 +5,12 @@ const setToLocalstorage = (traderName, arr) => {
 
 const getItemsFromLocalstorage = (traderName) => {
 	const traderRef = JSON.parse(localStorage.getItem(traderName));
+	const list = traderCompleteQuestLists[traderName];
 	for (let i = 0; i < traderRef.length; i++) {
-		const item = document.getElementById(traderRef[i]);
-		item.classList.add("quest-complete");
+		const item = traderRef[i];
+		list.push(item);
 	}
-	console.log(traderRef);
+	if (traderRef !== null) {
+		addClass(traderRef);
+	}
 };
