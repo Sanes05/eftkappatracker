@@ -2,11 +2,11 @@
 async function init() {
 	await getTraderInfos();
 	await getQuestInfos();
-	renderNavBar();
+	renderTraderNavBar();
 }
 
-function renderNavBar() {
-	let navbarContent = document.getElementById("navbar");
+function renderTraderNavBar() {
+	let navbarContent = document.getElementById("trader-navbar");
 	navbarContent.innerHTML = "";
 	for (let tradersIndex = 0; tradersIndex < tradersList.length; tradersIndex++) {
 		const traderName = tradersList[tradersIndex].name;
