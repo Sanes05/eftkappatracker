@@ -62,3 +62,14 @@ function toggleNavbarClass(id) {
 	}
 	navbarItem.classList.add("navbar-btn-clicked");
 }
+
+// <======================= Progress Page =======================>
+async function progressPageInit() {
+	await getTraderInfos();
+	await getQuestInfos();
+}
+
+function renderProgressBars() {
+	let progressbarsContentRef = document.getElementById("progress-content");
+	progressbarsContentRef.innerHTML = "";
+}

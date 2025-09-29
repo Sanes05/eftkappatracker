@@ -14,6 +14,20 @@ let lightkeeperQuestList = [];
 let btrDriverQuestList = [];
 let refQuestList = [];
 
+const traderQuestList = {
+	Prapor: praporQuestList,
+	Therapist: therapistQuestList,
+	Fence: fenceQuestList,
+	Skier: skierQuestList,
+	Peacekeeper: peacekeeperQuestList,
+	Mechanic: mechanicQuestList,
+	Ragman: ragmanQuestList,
+	Jaeger: jaegerQuestList,
+	Lightkeeper: lightkeeperQuestList,
+	"BTR Driver": btrDriverQuestList,
+	Ref: refQuestList
+};
+
 //list for the renderQuests function
 let questRenderList = [
 	"praporQuestList",
@@ -52,5 +66,6 @@ const traderCompleteQuestLists = {
 	Ragman: ragmanCompleteQuestsList,
 	Jaeger: jaegerCompleteQuestsList,
 	Lightkeeper: lightkeeperCompleteQuestsList,
-	"BTR Driver": btrDriverCompleteQuestsList
+	"BTR Driver": btrDriverCompleteQuestsList,
+	Ref: refCompleteQuestsList
 };
