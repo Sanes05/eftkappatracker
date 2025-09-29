@@ -21,7 +21,7 @@ function renderQuests(questList, name) {
 	content.innerHTML = "";
 	for (let i = 0; i < questList.length; i++) {
 		const questName = questList[i].name;
-		const kappareq = questList[i].kappaRequired;
+		const kappareq = questList[i].kappaRequired ? "Yes" : "No";
 		content.innerHTML += questTemplate(questName, kappareq, i, name);
 	}
 	getItemsFromLocalstorage(name);
