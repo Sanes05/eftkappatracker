@@ -24,3 +24,6 @@ const questTemplate = (name, kappareq, index, traderName) => {
 		</div>
     `;
 };
+
+// <======================= Progress Page =======================>
+const progressBarTemplate = (name) => {};
